@@ -33,6 +33,7 @@ class User:
 
 
 class Card:
+
     database = 'banking.db'
 
     def __init__(self, typ, number, cvc, holder):
@@ -132,30 +133,3 @@ ja_karta = Card(card_type, card_number, card_cvc, card_hold_name)
 
 if ja_user.buy(moj_seat, ja_karta):
     Ticket(ja_user.name, moj_seat.get_price(), moj_seat.seat_id).to_pdf('skusame_spolu.pdf')
-
-
-
-
-
-
-
-
-### THOSE COMMENTARS ARE ONLY IN DEVELOPMENT Python file.. can be deleted after testing
-# first_seat = Seat('A2')
-# john = User('John Smith')
-# johnova_karta = Card('Visa', 12345678, 123, john.name)
-# john.buy(first_seat, johnova_karta)
-
-# ticket = Ticket(john.name, first_seat.price, first_seat.seat_id)
-# print(ticket.id)
-# print(ticket.price)
-# ticket.to_pdf('cikosko.pdf')
-
-# marry = User('Marry Smith')
-# marry_karta = Card('Master Card', 12345678, 123, marry.name)
-# print(marry_karta.validate(cena))
-
-# matus = User('Matus Cho')
-# matusova_karta = Card('Visa', 123456, 123, matus.name)
-# print(matusova_karta.validate(12))
-# matus.buy(first_seat, matusova_karta)
