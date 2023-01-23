@@ -47,8 +47,8 @@ class Card:
         cursor = connection.cursor()
         #TODO: change holder to some unique identificator like card number
         cursor.execute("""
-        SELECT "number", "cvc", "holder", "balance" FROM "Card" WHERE "holder" = ?""",
-                       [self.holder])
+        SELECT "number", "cvc", "holder", "balance" FROM "Card" WHERE "number" = ?""",
+                       [self.number])
 
         fetched = cursor.fetchone()
         connection.close()
