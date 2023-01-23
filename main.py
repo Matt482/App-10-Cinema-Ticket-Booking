@@ -14,7 +14,7 @@ class User:
 
     def buy(self, seat, card):
 
-        boole, balance = card.validate(seat.price)
+        boole, balance = card.validate(seat.get_price())
         if boole:
             if seat.is_free():
                 seat.occupy(seat.seat_id)
